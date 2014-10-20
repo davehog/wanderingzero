@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wandering Zero || @ViewBag.Title</title>
+    <link href='http://fonts.googleapis.com/css?family=Crafty+Girls|Reenie+Beanie|Walter+Turncoat|Sigmar+One|Exo|Pacifico|Dancing+Script|Coming+Soon|Playball|Amatic+SC|Special+Elite|Homemade+Apple|Nothing+You+Could+Do' rel='stylesheet' type='text/css'>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+    <body>
+
+        <div class="container body-content">
+            <div class="jumbotron">
+                <h1>Wandering Zero</h1>
+                <p class="lead">Whiskey-soaked Country, 'Grass and Punk from Portland, Oregon</p>
+            </div>
+
+            <div class="navbar navbar-inverse">
+                <div class="container">
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                    </div>
+                    <div class="navbar-collapse collapse">
+                        <ul class="nav navbar-nav">
+                            <li>@Html.ActionLink("Band", "Index", "Home")</li>
+                            <li>@Html.ActionLink("Shows", "Shows", "Home")</li>
+                            <li>@Html.ActionLink("Media", "Media", "Home")</li>
+                            <li><a href="http://www.facebook.com/wanderingzero" target="_new">Facebook</a></li>
+                            <li><a href="http://www.reverbnation.com/wanderingzero" target="_new">Reverbnation</a></li>
+                            <li>@Html.ActionLink("Book Us", "Contact", "Home")</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            @RenderBody()
+            <hr />
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Wandering Zero</p>
+            </footer>
+        </div>
+
+        @Scripts.Render("~/bundles/jquery")
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("scripts", required: false)
+        <script>
+            $(function () {
+                var images = ['/images/jumbotron/jumbotron-back-1.jpg',
+                                '/images/jumbotron/jumbotron-back-2.png',
+                                '/images/jumbotron/jumbotron-back-3.png',
+                                '/images/jumbotron/jumbotron-back-4.png',
+                                '/images/jumbotron/jumbotron-back-5.png',
+                                '/images/jumbotron/jumbotron-back-6.png',
+                                '/images/jumbotron/jumbotron-back-7.png',
+                                '/images/jumbotron/jumbotron-back-8.png',
+                                '/images/jumbotron/jumbotron-back-9.png',
+                                '/images/jumbotron/jumbotron-back-10.png'];
+                $('.jumbotron').css({ 'background-image': 'url(' + images[Math.floor(Math.random() * images.length)] + ')' });
+            });
+        </script>
+    </body>
+</html>
